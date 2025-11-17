@@ -128,7 +128,7 @@
         </div>
         <h2>Overview</h2>
         <div>
-            As shown below, <strong>ToolName</strong> takes as input a potential bug location and its
+            As shown below, <strong>VulAgent</strong> takes as input a potential bug location and its
             enclosing function, and automatically produces either a Proof-of-Concept (PoC) that triggers the bug or a
             justification showing that the bug is not exploitable.
             This design mirrors how vulnerability validation is typically decomposed in practice and prevents LLMs from
@@ -138,7 +138,7 @@
 
         <div>
             (1) <strong>Testcase Generation</strong>. For each target function <var>F₀</var>,
-            <strong>ToolName</strong> retrieves its callers (<var>F₁</var>, <var>F₂</var>, <var>F₃</var>, …) and
+            <strong>VulAgent</strong> retrieves its callers (<var>F₁</var>, <var>F₂</var>, <var>F₃</var>, …) and
             performs rule-based pruning to remove evidently safe callers, followed by rule-based slicing to retain only
             statements relevant to the potential overflow.
             The resulting sliced functions form the vulnerability contexts, which are ranked by the Code Context
@@ -156,7 +156,7 @@
             generation loop.
             The LLM mutates and re-executes the testcase until a crash or incorrect behavior is observed, at which point
             the testcase is finalized as a valid PoC.
-            If all mutations are exhausted without success, <strong>ToolName</strong> returns a reasoned explanation of
+            If all mutations are exhausted without success, <strong>VulAgent</strong> returns a reasoned explanation of
             non-exploitability and hands control back to the testcase generation stage to initiate a new round of
             testcase generation.
         </div>
@@ -169,10 +169,11 @@
         </div>
 
         <div style="margin: 0 auto;">
-            <img src="3overview_00.png" width="100%" alt="Workflow overview of ToolName" />
+            <img src="3overview_00.png" width="100%" alt="Workflow overview of VulAgent" />
         </div>
     </div>
 
 </body>
 
 </html>
+
