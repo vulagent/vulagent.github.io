@@ -8,8 +8,19 @@
     <title>VulAgent Introduction</title>
     <style>
         /* Cleaned and focused styles. .container preserved and lightly tweaked. */
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Open Sans', 'Helvetica Neue', Arial, sans-serif;background:linear-gradient(180deg,#f7f9fc, #f6f7fb);color:#233;line-height:1.6;padding:28px}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(180deg, #f7f9fc, #f6f7fb);
+            color: #233;
+            line-height: 1.6;
+            padding: 28px
+        }
 
         .container {
             max-width: 1000px;
@@ -20,16 +31,46 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
-        h1{font-size:1.6rem;color:#0b1226;margin-bottom:8px}
-        h2{font-size:1.25rem;color:#0b1226;margin:6px 0 16px}
+        h1 {
+            font-size: 1.6rem;
+            color: #0b1226;
+            margin-bottom: 8px
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: #0b1226;
+            margin: 6px 0 16px
+        }
 
         /* Intro text */
-        .introduction{font-size:1rem;color:#334155;background:#fbfdff;padding:18px;border-radius:8px;border:1px solid rgba(11,20,40,0.04)}
+        .introduction {
+            font-size: 1rem;
+            color: #334155;
+            background: #fbfdff;
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(11, 20, 40, 0.04)
+        }
 
         /* Inline code */
-        code{background:#f3f7ff;padding:2px 8px;border-radius:6px;border:1px solid rgba(11,20,60,0.04);font-family:monospace}
+        code {
+            background: #f3f7ff;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(11, 20, 60, 0.04);
+            font-family: monospace
+        }
 
-        @media (max-width:720px){body{padding:16px}.container{padding:20px}}
+        @media (max-width:720px) {
+            body {
+                padding: 16px
+            }
+
+            .container {
+                padding: 20px
+            }
+        }
     </style>
 </head>
 
@@ -51,22 +92,84 @@
         gap: 10px;
         padding: 0 20px;
     ">
-<a href="/" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> Home</a>
-<a href="/introduction" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f5e9; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> VulAgent Introduction</a>
-<a href="/example" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> Motivating Example</a>
-<a href="/prompt" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> Prompts</a>
-<a href="https://github.com/vulagent/VulAgent" target="_blank" rel="noopener" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> GitHub</a>
-<a href="/bugs" style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;"> Detected Vulnerabilities</a>
-       </div>
+            <a href="/"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                Home</a>
+            <a href="/introduction"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f5e9; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                VulAgent Introduction</a>
+            <a href="/example"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                Motivating Example</a>
+            <a href="/prompt"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                Prompts</a>
+            <a href="https://github.com/vulagent/VulAgent" target="_blank" rel="noopener"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                GitHub</a>
+            <a href="/bugs"
+                style="padding: 8px 16px; text-decoration: none; color: #1a73e8; background: #e8f0fe; border-radius: 6px; font-weight: 600; font-size: 0.95em;">
+                Detected Vulnerabilities</a>
+        </div>
     </nav>
     <div class="container">
         <h2>What is VulAgent?</h2>
         <div>
-            VulAgent is a vulnerability-mining tool powered by generative artificial intelligence (AI) that specializes in discovering integer-overflow bugs. During mining, it automatically creates proof-of-concept (PoC) inputs to trigger the flaws and, upon successful activation, produces detailed vulnerability reports. VulAgent’s capabilities are continuously expanded, with support for additional vulnerability classes planned for future releases.
+            VulAgent is a vulnerability-mining tool powered by generative artificial intelligence (AI) that specializes
+            in discovering integer-overflow bugs. During mining, it automatically creates proof-of-concept (PoC) inputs
+            to trigger the flaws and, upon successful activation, produces detailed vulnerability reports. VulAgent’s
+            capabilities are continuously expanded, with support for additional vulnerability classes planned for future
+            releases.
         </div>
         <h2>Get started with VulAgent</h2>
         <div>
-            To quickly start using VulAgent, visit <a href="https://github.com/vulagent/VulAgent" target="_blank" rel="noopener">GitHub</a> for the source code and instructions.
+            To quickly start using VulAgent, visit <a href="https://github.com/vulagent/VulAgent" target="_blank"
+                rel="noopener">GitHub</a> for the source code and instructions.
+        </div>
+        <h2>Overview</h2>
+        <div>
+            As shown below, <strong>ToolName</strong> takes as input a potential bug location and its
+            enclosing function, and automatically produces either a Proof-of-Concept (PoC) that triggers the bug or a
+            justification showing that the bug is not exploitable.
+            This design mirrors how vulnerability validation is typically decomposed in practice and prevents LLMs from
+            conflating context understanding with testcase synthesis.
+            The workflow consists of two major stages.
+        </div>
+
+        <div>
+            (1) <strong>Testcase Generation</strong>. For each target function <var>F₀</var>,
+            <strong>ToolName</strong> retrieves its callers (<var>F₁</var>, <var>F₂</var>, <var>F₃</var>, …) and
+            performs rule-based pruning to remove evidently safe callers, followed by rule-based slicing to retain only
+            statements relevant to the potential overflow.
+            The resulting sliced functions form the vulnerability contexts, which are ranked by the Code Context
+            Ordering module to identify the most suspicious path.
+            The top-ranked context is then fed into the LLM-based Reasoning module, where the model recognizes
+            functionality, locates key variables, and decides subsequent actions.
+            Guided by the reasoning results, the agent interacts with external tools through the Tools Call interface: a
+            "Code Browser" supplements missing code context, and a "Code Runner" executes candidate testcases that are
+            validated by a "Checker".
+            Failed attempts trigger refined reasoning, forming an iterative reasoning–execution loop.
+        </div>
+
+        <div>
+            (2) <strong>PoC Generation</strong>. Once a testcase passes the "Checker", it enters the PoC
+            generation loop.
+            The LLM mutates and re-executes the testcase until a crash or incorrect behavior is observed, at which point
+            the testcase is finalized as a valid PoC.
+            If all mutations are exhausted without success, <strong>ToolName</strong> returns a reasoned explanation of
+            non-exploitability and hands control back to the testcase generation stage to initiate a new round of
+            testcase generation.
+        </div>
+
+        <div>
+            This design combines static analysis with an adaptive LLM reasoning process tailored to integer overflow
+            vulnerabilities, forming a closed loop that continuously refines hypotheses, executes concrete tests, and
+            validates results, ultimately enabling automated and reproducible confirmation of integer overflow bugs in
+            real-world C projects.
+        </div>
+
+        <div style="margin: 0 auto;">
+            <img src="3overview_00.png" width="100%" alt="Workflow overview of ToolName" />
         </div>
     </div>
 
